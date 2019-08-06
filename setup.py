@@ -344,6 +344,9 @@ class pil_build_ext(build_ext):
 
     def build_extensions(self):
 
+        if "DISABLE_PLATFORM_GUESSING" in os.environ:
+            self.disable_platform_guessing = True
+
         library_dirs = []
         include_dirs = []
 
